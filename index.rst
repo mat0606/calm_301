@@ -56,3 +56,12 @@
 
   calm_api/calm_api
 
+  .. toctree::
+  :maxdepth: 2
+  :caption: 301: Infrastructure as Code (IAC) with Calm Domain Specific Language (DSL)
+  :name: _calm_dsl
+  :hidden:
+
+  calm_dsl/calm_dsl
+
+
