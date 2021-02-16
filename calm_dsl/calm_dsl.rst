@@ -10,7 +10,7 @@ Overview
 
 ## Setup
 
-To start the DSL lab we have provided a [DevWorkStation.json](https://raw.githubusercontent.com/bmp-ntnx/QuickStartCalmDSL/master/DevWorkstation.json) blueprint to quickly get you started. The included DevWorkstation.json builds a CentOS VM with all the necessary tools.  This blueprint can be launched directly from Calm, but we recommend publishing it to the Calm Marketpkace for Self Service.  Also, included is [software-developer.png](https://github.com/bmp-ntnx/QuickStartCalmDSL/blob/master/software-developer.png) which can be used as an icon
+To start the DSL lab we have provided a [DevWorkStation.json](https://raw.githubusercontent.com/bmp-ntnx/QuickStartCalmDSL/master/DevWorkstation.json) blueprint to quickly get you started. The included DevWorkstation.json builds a CentOS VM with all the necessary tools.  This blueprint can be launched directly from Calm, but we recommend publishing it to the Calm Marketplace for Self Service.  Also, included is [software-developer.png](https://github.com/bmp-ntnx/QuickStartCalmDSL/blob/master/software-developer.png) which can be used as an icon
 
 ## Launch DevWorkstation from Calm Marketplace
 
@@ -156,14 +156,14 @@ To start the DSL lab we have provided a [DevWorkStation.json](https://raw.github
 
 
   .. figure:: images/describe.png
-<!--- -   Run ```calm describe app AppFromDSL-<Initials> --out json | grep -F '[{\"ip\":\"'``` to search the json output for the VM IP --->
+Run ```calm describe app AppFromDSL-<Initials> --out json | grep -F '[{\"ip\":\"'``` to search the json output for the VM IP 
 
 -   Now we need to get the VM/Application IP address.  To get this we will pull the "address" from the application json output using jq by running the following:
 
 -   ```calm describe app AppFromDSL-<Initials> --out json | jq '.status.resources.deployment_list[].substrate_configuration.element_list[].address'```
 
 
-<!--- ![Alt text](images/getip.png) --->
+  .. figure:: images/getip.png
   .. figure:: images/jqout.png
 
 -   Enter the IP in a web browser and this will take you to the nginx **"Welcome to DSL"** web page
