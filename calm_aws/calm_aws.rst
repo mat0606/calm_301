@@ -62,7 +62,7 @@ Create an AWS Blueprint
 
 #. On the right side of the screen, select the following:
 
-   .. figure:: images/AWS_Account_Detail.png
+   .. figure:: images/aws_service_detail.png
 
 #. On the right side of the screen, select the following:
 
