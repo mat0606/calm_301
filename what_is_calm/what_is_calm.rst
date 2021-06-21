@@ -9,47 +9,9 @@ Overview
 
 Calm provides advanced application-level orchestration that transforms how IT teams manage applications and support the business. Fully integrated into the Nutanix platform, Calm delivers a powerful, common management framework that can be simultaneously leveraged by multiple IT teams to rapidly create and deliver applications.
 
-By approaching applications as complete entities, not just virtual machines (VMs), Calm automates how applications are created, consumed and governed. Calm delivers simple, repeatable and automated management of applications across a variety of environments, including private and public clouds.
+Calm allows IT to expose the underlying infrastructure across multiple clouds as services the development and the business team can consume easily.
 
-What is the State of Things Today
-+++++++++++++++++++++++++++++++++
-
-Managing Apps Is Increasingly Challenging
-.........................................
-
-.. figure:: images/what_is_calm_01.png
-
-How Does Nutanix Solve This Problem
-+++++++++++++++++++++++++++++++++++
-
-Foundation For Enterprise Cloud
-...............................
-
-Nutanix provides the foundation for your Enterprise cloud.
-
-.. figure:: images/what_is_calm_02.png
-
-Delivering the Enterprise Cloud Vision
-......................................
-
-Application Automation
-
-- App-centric orchestration and lifecycle management
-- Policy-based governance
-- Self-Service provisioning
-
-.. figure:: images/what_is_calm_03.png
-
-Delivering the Enterprise Cloud Vision: Multi-Cloud
-...................................................
-
-Multi-Cloud Management
-
-- Abstract applications from cloud infrastructure
-- Deploy and manage applications on any cloud
-- Visibility and control of public cloud consumption
-
-.. figure:: images/what_is_calm_05.png
+.. figure:: images/calm_hybrid_cloud.png
 
 Calm: Application Lifecycle Automation
 ++++++++++++++++++++++++++++++++++++++
