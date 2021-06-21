@@ -1,9 +1,5 @@
 .. _calm_aws:
 
-Pre-Requisites:
-+++++++++++++++
-
-This lab is created using Nutanix Calm 3.2.6 and Prism Central pc.2021.5
 
 Gateway to myraid infrastructure
 +++++++++++++++++++++++++++++++++

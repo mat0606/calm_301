@@ -54,7 +54,7 @@
   :name: _calm_day2
   :hidden:
 
-  calm_linux_track/calm_day2_linux
+  calm_linux_track/calm_day2_linux/calm_day2_linux
 
 .. toctree::
   :maxdepth: 2
