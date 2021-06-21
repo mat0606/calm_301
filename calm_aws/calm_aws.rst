@@ -1,167 +1,139 @@
-.. _calm_project:
+.. _calm_aws:
 
 Pre-Requisites:
 +++++++++++++++
 
 This lab is created using Nutanix Calm 3.2.6 and Prism Central pc.2021.5
 
-Create a Project in Calm
-++++++++++++++++++++++++
+Gateway to myraid infrastructure
++++++++++++++++++++++++++++++++++
 
-Projects are the logical construct that integrate Calm with Nutanix’s native Self-Service Portal (SSP) capabilities, allowing an administrator to assign both infrastructure resources and the roles/permissions of Active Directory users/groups to specific Blueprints and Applications.
+Nutanix Calm is the gateway to the myraid infrastructure across multiple clouds.  Every infrastructure is exposed as services the developer can consume.  Innovation is the life blood of every organization.  Every key turning innovation starts as an idea.  Public cloud (AWS, Azure, GCP) is an essential infrastructure provider for organization to test out their ideas.  
 
 
-#. Click on **Project** in the left hand toolbar .  Click on **Create Project**.
+Provider in Nutanix Calm
+........................
+
+Nutanix Calm supports the following providers (AHV, ESXi, AWS, Azure, GCP & Kubernetes).  **The lab was setup with the instructor AWS account. No actions on the trainees required for this section.**  
+
+#. Click on **Setting** in the left hand toolbar .  Click on **Accounts**.
+
+   .. figure:: images/Calm_Providers.png
+
+#. Define the AWS Regions available to the project.
+
+   .. figure:: images/AWS_Region.png
+
+
+Add AWS Account into Project
+............................
+
+#. Click on **Project** in the left hand toolbar.  Drill into the project created earlier.
 
    .. figure:: images/project_list.png
 
-#. Click on **Add Account**.
+#. Click on **Add Account**.  
 
-   .. figure:: images/project_namel.png
+   .. figure:: images/Project_Detail2.png
 
-#. Fill in the Project Name. Eg Trainee_Project_Name.  Click on **Create**.
+#. Click on **Select Account**.  Select **MO_AWS**
 
-   .. figure:: images/Project_Detail.png
+   .. figure:: images/Add_AWS_Account.png
 
-Add Account in Project
-......................
+#. Click on **Save Accounts and Project**.  
 
-#. Click on **Select Account**.  Select **NTNX_LOCAL_AZ**
-
-   .. figure:: images/Add_Account.png
-
-#. Click on **Add/edit Clusters and Subnets**.  
-
-   .. figure:: images/Add_Cluster.png
-
-#. Select **cluster**.  Select the **Primary** Network.  Click on **Confirm**.
-
-   .. figure:: images/Select_Cluster.png
-
-#. Click on **Save Accounts and Project**
-
-   .. figure:: images/Save-Account.png
-
-#. Click on **Save & Configure Environment**
-
-   .. figure:: images/project_quota.png
-
-Configure the Environment in Project
-....................................
-
-#. The environment play a critical role to allow the **Consumer** role user to launch a marketplace item with pre-defined hardware specification, guest customization and credentials required in the execution of the blueprint.
-
-#. Click on **Create Environment**
-
-   .. figure:: images/Create_Environment.png
-
-#. Fill in the name for the environment.  Eg **Default Environment**.  Click on **Account**
-
-   .. figure:: images/Environment_Name.png
-
-#. Select **NTNX_LOCAL_AZ**
-
-   .. figure:: images/Environment_Account.png
-
-#. Click on **VM Configuration**
-
-   .. figure:: images/Environment_Detail.png
-
-#. Click on **Linux**.  Fill in the following hardware specification.
-
-   .. figure:: images/Linux_HW.png
-
-#. Copy the **cloud-init** contents into the **Guest Customization**
-  
-   .. code-block:: bash
-   
-    #cloud-config
-    users:
-    - name: centos
-    ssh-authorized-keys:
-      - @@{centos_public_key}@@
-    sudo: ['ALL=(ALL) NOPASSWD:ALL'] 
-
-   .. note::
-
-#.  Expand the **DISK** section.  Select the disk image as shown.
-
-   .. figure:: images/Env-Disk-Image.png
-
-#.  Expand the **Network Adapter** section.  Select the Network Adapter: **Primary**.
-
-   .. figure:: images/Env-Network-Adapter.png
-
-#.  Expand the **Connection** section.  Click on **Add New Credential**.
-
-   .. figure:: images/Env-Connection.png
-
-#. Create the credential for centos.  Fill out the following fields:
+   .. figure:: images/AWS_Account_Detail.png.png
 
 
-   - **Credential Name** - centos
+Create an AWS Blueprint
+.......................
+
+#. Click on **Blueprint** in the left hand toolbar.  Select the **Multi-VM/Pod Blueprint**
+
+   .. figure:: images/Create_Bp.png
+
+#. Fill in your **initial**-aws as the blueprint name and select your project
+
+   .. figure:: images/bp_project.png
+
+#. Click on + to add Service
+
+   .. figure:: images/add_service.png
+ 
+#. On the right side of the screen, select the AWS Account Provider
+
+   .. figure:: images/Select_Account.png
+
+#. On the right side of the screen, select the following:
+
+   .. figure:: images/AWS_Account_Detail.png
+
+#. On the right side of the screen, select the following:
+
+   .. figure:: images/AWS_Account_Detail2.png
+ 
+#. On the right side of the screen, uncheck the **Check Login upon Create**.  The lab was not setup to use elastic IP address.  The public IP address of the AWS EC2 instance may not be accessible from the lab.
+
+#. Click on **Add Credential**.  Fill in the following:
+
+- **Credential Name** - centos
    - **Username** - centos
    - **Secret Type** - ssh private key
    - **Key** - Paste in your own private key, or use:
    ::
 
      -----BEGIN RSA PRIVATE KEY-----
-     MIIEowIBAAKCAQEAii7qFDhVadLx5lULAG/ooCUTA/ATSmXbArs+GdHxbUWd/bNG
-     ZCXnaQ2L1mSVVGDxfTbSaTJ3En3tVlMtD2RjZPdhqWESCaoj2kXLYSiNDS9qz3SK
-     6h822je/f9O9CzCTrw2XGhnDVwmNraUvO5wmQObCDthTXc72PcBOd6oa4ENsnuY9
-     HtiETg29TZXgCYPFXipLBHSZYkBmGgccAeY9dq5ywiywBJLuoSovXkkRJk3cd7Gy
-     hCRIwYzqfdgSmiAMYgJLrz/UuLxatPqXts2D8v1xqR9EPNZNzgd4QHK4of1lqsNR
-     uz2SxkwqLcXSw0mGcAL8mIwVpzhPzwmENC5OrwIBJQKCAQB++q2WCkCmbtByyrAp
-     6ktiukjTL6MGGGhjX/PgYA5IvINX1SvtU0NZnb7FAntiSz7GFrODQyFPQ0jL3bq0
-     MrwzRDA6x+cPzMb/7RvBEIGdadfFjbAVaMqfAsul5SpBokKFLxU6lDb2CMdhS67c
-     1K2Hv0qKLpHL0vAdEZQ2nFAMWETvVMzl0o1dQmyGzA0GTY8VYdCRsUbwNgvFMvBj
-     8T/svzjpASDifa7IXlGaLrXfCH584zt7y+qjJ05O1G0NFslQ9n2wi7F93N8rHxgl
-     JDE4OhfyaDyLL1UdBlBpjYPSUbX7D5NExLggWEVFEwx4JRaK6+aDdFDKbSBIidHf
-     h45NAoGBANjANRKLBtcxmW4foK5ILTuFkOaowqj+2AIgT1ezCVpErHDFg0bkuvDk
-     QVdsAJRX5//luSO30dI0OWWGjgmIUXD7iej0sjAPJjRAv8ai+MYyaLfkdqv1Oj5c
-     oDC3KjmSdXTuWSYNvarsW+Uf2v7zlZlWesTnpV6gkZH3tX86iuiZAoGBAKM0mKX0
-     EjFkJH65Ym7gIED2CUyuFqq4WsCUD2RakpYZyIBKZGr8MRni3I4z6Hqm+rxVW6Dj
-     uFGQe5GhgPvO23UG1Y6nm0VkYgZq81TraZc/oMzignSC95w7OsLaLn6qp32Fje1M
-     Ez2Yn0T3dDcu1twY8OoDuvWx5LFMJ3NoRJaHAoGBAJ4rZP+xj17DVElxBo0EPK7k
-     7TKygDYhwDjnJSRSN0HfFg0agmQqXucjGuzEbyAkeN1Um9vLU+xrTHqEyIN/Jqxk
-     hztKxzfTtBhK7M84p7M5iq+0jfMau8ykdOVHZAB/odHeXLrnbrr/gVQsAKw1NdDC
-     kPCNXP/c9JrzB+c4juEVAoGBAJGPxmp/vTL4c5OebIxnCAKWP6VBUnyWliFhdYME
-     rECvNkjoZ2ZWjKhijVw8Il+OAjlFNgwJXzP9Z0qJIAMuHa2QeUfhmFKlo4ku9LOF
-     2rdUbNJpKD5m+IRsLX1az4W6zLwPVRHp56WjzFJEfGiRjzMBfOxkMSBSjbLjDm3Z
-     iUf7AoGBALjvtjapDwlEa5/CFvzOVGFq4L/OJTBEBGx/SA4HUc3TFTtlY2hvTDPZ
-     dQr/JBzLBUjCOBVuUuH3uW7hGhW+DnlzrfbfJATaRR8Ht6VU651T+Gbrr8EqNpCP
-     gmznERCNf9Kaxl/hlyV5dZBe/2LIK+/jLGNu9EJLoraaCBFshJKF
-     -----END RSA PRIVATE KEY-----
+     MIIEowIBAAKCAQEAm7e5jSovGg6Mt4X5WGF5l0qCMth/sSK+ZVKaMBaQRlKdttrb+O93mTOxXXga
+     F+zCGTu9+830peO+L+Yh1sG/ZKPm3kRmit4nZOH5GQeLoX8ivK7o1hvgEoyAxWbEuns39U54/+6J
+     jBgnRgzlO5hpY6LJ0lWeFKdqgUN/b1VlPYd6gg3xIzl9ZYqFyTFbwRoSDfEGCP2JKttzpsgIeDBz
+     W0wcu12kMQq6WqWraHt7RFWAvojlRA7rqsUL5S/VxDXgBZZQbP1iKeZXQtbeWZ9dMFf/TXvwwpMw
+     wXjuhpAUmlX2mBMYEJdvR3LED9wn/t67H5j6h4W5LplhhMErV0mNIwIDAQABAoIBABawTWPpKpXE
+     WvJ+ndcn1LybiZ749poLsuw2ferVzs3ASeSTvQtncOispII29q5Xu+xLTSI8XxIwvcxi3rlY35c9
+     Xm0yUDKZrenAFzhzZf/w81HEtn5D74EkYbrhf3agb4XZmj3INthnyIknZdsqGOkAliGEghUGU7lj
+     6VSCf87YDWtYeseriuPoZYYgknOZaPQRgN0S7+t8we9iYTX5X7HZXWBu68kWnCld0odz0K2BcVzy
+     n58+ZOzyd5t0Isl8tm0m3YMYxQw9dwkGvq4AT/8qbC6iAh/JMDIQiFOlRBSW4M/qKnWkXiwdloxC
+     SCZXlaewDad0v5QXOg2kamRM8ikCgYEAy0EUWaprRyxuWCNslQASQsOGyasTz2DlY545xPp2qzxC
+     1nk5nFGPSmoC04wY4pJHcTEaPRJ1whtbBPMG7+7v8nkqD6IkXc8dU+AUZVl7oYCtk4gMev5Y5t2N
+     CKJlyBNtpQBHB2uVpBF7M+EODSbkagwjWdrTGsx3E3//+RowGj8CgYEAxCCefbRQI/Q61hoQXMzG
+     z0chzKop05FgNx4Fd7uII+H9hqjCCaRiZBBunzS2PMIw1e3kR69AhuZ6xJh2oz/aSq/bTivPA2qC
+     JkBQ3RXvglQnsMa+cjTYJBwKSf3b+Fmuge9vxzFbcsgOYwN8ddEmCtsPnCFVUnbc1qsDF5I8bB0C
+     gYB7q4l6VVsY30v0jPlQX868mMO2iUVwdQCd8HQuCkeSQQRaA0CugGGzYXV+ykuJ8H9PvBS+/DBy
+     frqO9GBQNQ4Cdv7ErF98RL0Pf9RpJl03E1iJ38nYPFJThpJ9onJTnp6kOtr9BNT0Ez7nfhRSpEtu
+     yxvnXGH+eFIrp0JUiz6heQKBgAvZCJoBZYH2hANhCbIBcNUer+0ELoioVI6f0qa7/mpkgYM7+JTK
+     iGMRFw2pCoU7GeYie9LUxGohzDLKHwiXl+FBJFdhkBzdt0UGR5xDcfeGi+tC5khR5uivhPOZUUt8
+     Z21UAIWg9qxFZ5EVqdQYMVsghp3g6Z2UrpyNMh+fZuUFAoGBAIkV+8vY/b5c6j745IHTBOQIyqfH
+     JLlVChAL1PqeqPi9Ffy8iLR6CecOjx+sWwM9ePLt/urLJSrXamfnBK6j0ZY6d4Ps1kWSRIYIECqa
+     QrTdxF2BX7ppu4vG66u8wmvSs59ej1D7wRtsMP/VLfVdtZy5PrfxVHXbRHWAZrSOSsOb
+     -----END RSA PRIVATE KEY----- 
 
-   .. figure:: images/centos_credential.png
+   .. figure:: images/add_credential.png
 
-#. Click on **Done**.  Click on **Next**
+#. Click on **Save**
 
-#. Click on **Save Environment**.
-
-   .. figure:: images/Save_Environment.png
-
-Verify the Environment
-......................
+   .. figure:: images/Save_Bp.png
 
 
-#. Verify the environment was created.  Click on **1 environment added**
+Launch the AWS Blueprint
+........................
 
-   .. figure:: images/Project_Detail2.png
+#. On the top right side of the screen.  Click on **Launch**
 
-#. Click on **Update Environment**
+#. Fill in the **initial**-aws as the application name.  Click on **Deploy**
 
-   .. figure:: images/Update_Environment.png   
+   .. figure:: images/Launch_Bp.png
 
-#. Click on **Account**
+#. Wait a few minutes for the provisioning to complete.  The state will change from orange color "Provisioning" to green color "Running."
 
-   .. figure:: images/Environment_Name.png   
+   .. figure:: images/application_complete.png
 
-#. Verify the **Ready for Marketplace usage, Linux only**
+#. Click on **Service**.  Click on **AWS**.  The public IP address of the EC2 instance are available on the right hand side of the screen.
 
-   .. figure:: images/Linux_Verification.png   
+   .. figure:: images/app_service_detail.png
 
+#. Click on **Delete** to delete the AWS EC2 instance to prevent un-necessary consumption of the AWS resource.
 
+   .. figure:: images/delete_aws_app.png
 
+#. Click on **Delete**.
 
-
+   .. figure:: images/delete_confirmation.png

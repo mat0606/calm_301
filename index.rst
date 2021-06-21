@@ -42,6 +42,22 @@
 
 .. toctree::
   :maxdepth: 2
+  :caption: 201: Calm Multi-Cloud: AWS
+  :name: _calm_aws
+  :hidden:
+
+  calm_aws/calm_aws
+
+.. toctree::
+  :maxdepth: 2
+  :caption: 201: Linux Workload Scale Out/Scale In
+  :name: _calm_day2
+  :hidden:
+
+  calm_linux_track/calm_day2_linux
+
+.. toctree::
+  :maxdepth: 2
   :caption: 301: Nutanix Calm for Day 2 Operation
   :name: _calm_api
   :hidden:
