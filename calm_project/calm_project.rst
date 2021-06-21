@@ -17,18 +17,18 @@ Projects are the logical construct that integrate Calm with Nutanix’s native S
 
 #. Click on **Add Account**.
 
-   .. figure:: images/project_name1.png
+   .. figure:: images/project_namel.png
 
 #. Fill in the Project Name. Eg Trainee_Project_Name.  Click on **Create**.
 
-   .. figure:: images/project_detail.png
+   .. figure:: images/Project_Detail.png
 
 Add Account in Project
 ......................
 
 #. Click on **Select Account**.  Select **NTNX_LOCAL_AZ**
 
-   .. figure:: images/add_account.png
+   .. figure:: images/Add_Account.png
 
 #. Click on **Add/edit Clusters and Subnets**.  
 
@@ -40,7 +40,7 @@ Add Account in Project
 
 #. Click on **Save Accounts and Project**
 
-   .. figure:: images/Save_Account.png
+   .. figure:: images/Save-Account.png
 
 #. Click on **Save & Configure Environment**
 
@@ -147,7 +147,7 @@ Verify the Environment
 
 #. Verify the environment was created.  Click on **1 environment added**
 
-   .. figure:: images/Project_Details2.png
+   .. figure:: images/Project_Detail2.png
 
 #. Click on **Update Environment**
 
