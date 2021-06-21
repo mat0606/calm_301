@@ -38,7 +38,7 @@ Add AWS Account into Project
 
 #. Click on **Save Accounts and Project**.  
 
-   .. figure:: images/AWS_Account_Detail.png.png
+   .. figure:: images/AWS_Account_Detail.png
 
 
 Create an AWS Blueprint
