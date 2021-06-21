@@ -1,5 +1,10 @@
 .. _calm_project:
 
+Pre-Requisites:
++++++++++++++++
+
+This lab is created using Nutanix Calm 3.2.6 and Prism Central pc.2021.5
+
 Create a Project in Calm
 ++++++++++++++++++++++++
 
@@ -10,18 +15,32 @@ Projects are the logical construct that integrate Calm with Nutanix’s native S
 
    .. figure:: images/project_list.png
 
-#. Click on **Select Provider**.  Select **Nutanix**.
+#. Click on **Add Account**.
 
-   .. figure:: images/project_provider.png
+   .. figure:: images/project_name1.png
 
+#. Fill in the Project Name. Eg Trainee_Project_Name.  Click on **Create**.
 
-#. Click on **Select Clusters & Subnets**
+   .. figure:: images/project_detail.png
 
-   .. figure:: images/cluster_subnets.png
+Add Account in Project
+......................
 
-#. Select the **Rx-Automation-Network**.  Click on **Confirm**
+#. Click on **Select Account**.  Select **NTNX_LOCAL_AZ**
 
-   .. figure:: images/project_network.png
+   .. figure:: images/add_account.png
+
+#. Click on **Add/edit Clusters and Subnets**.  
+
+   .. figure:: images/Add_Cluster.png
+
+#. Select **cluster**.  Select the **Primary** Network.  Click on **Confirm**.
+
+   .. figure:: images/Select_Cluster.png
+
+#. Click on **Save Accounts and Project**
+
+   .. figure:: images/Save_Account.png
 
 #. Click on **Save & Configure Environment**
 
@@ -29,6 +48,53 @@ Projects are the logical construct that integrate Calm with Nutanix’s native S
 
 Configure the Environment in Project
 ....................................
+
+#. The environment play a critical role to allow the **Consumer** role user to launch a marketplace item with pre-defined hardware specification, guest customization and credentials required in the execution of the blueprint.
+
+#. Click on **Create Environment**
+
+   .. figure:: images/Create_Environment.png
+
+#. Fill in the name for the environment.  Eg **Default Environment**.  Click on **Account**
+
+   .. figure:: images/Environment_Name.png
+
+#. Select **NTNX_LOCAL_AZ**
+
+   .. figure:: images/Environment_Account.png
+
+#. Click on **VM Configuration**
+
+   .. figure:: images/Environment_Detail.png
+
+#. Click on **Linux**.  Fill in the following hardware specification.
+
+   .. figure:: images/Linux_HW.png
+
+#. Copy the **cloud-init** contents into the **Guest Customization**
+  
+   .. code-block:: bash
+   
+    #cloud-config
+    users:
+    - name: centos
+    ssh-authorized-keys:
+      - @@{centos_public_key}@@
+    sudo: ['ALL=(ALL) NOPASSWD:ALL'] 
+
+   .. note::
+
+#.  Expand the **DISK** section.  Select the disk image as shown.
+
+   .. figure:: images/Env-Disk-Image.png
+
+#.  Expand the **Network Adapter** section.  Select the Network Adapter: **Primary**.
+
+   .. figure:: images/Env-Network-Adapter.png
+
+#.  Expand the **Connection** section.  Click on **Add New Credential**.
+
+   .. figure:: images/Env-Connection.png
 
 #. Create the credential for centos.  Fill out the following fields:
 
@@ -68,34 +134,34 @@ Configure the Environment in Project
      -----END RSA PRIVATE KEY-----
 
    .. figure:: images/centos_credential.png
-   
-#. Expand the **Linux** section.  Fill in the following hardware specification.
 
-   .. figure:: images/Linux-Environment.png
+#. Click on **Done**.  Click on **Next**
 
-#. Copy the **cloud-init** contents into the **Guest Customization**
-  
-   .. code-block:: bash
-   
-    #cloud-config
-    users:
-    - name: centos
-    ssh-authorized-keys:
-      - @@{centos_public_key}@@
-    sudo: ['ALL=(ALL) NOPASSWD:ALL'] 
+#. Click on **Save Environment**.
 
-   .. note::
+   .. figure:: images/Save_Environment.png
 
-#.  Expand the **DISK** section.  Select the disk image as shown.
+Verify the Environment
+......................
 
-   .. figure:: images/Env-Disk-Image.png
 
-#.  Expand the **Network Adapter** section.  Select the Network Adapter
+#. Verify the environment was created.  Click on **1 environment added**
 
-   .. figure:: images/Env-Network-Adapter.png
+   .. figure:: images/Project_Details2.png
 
-#.  Expand the **Connection** section.  Select the Credential and Address.  Click on Save.
+#. Click on **Update Environment**
 
-   .. figure:: images/Env-Connection.png
+   .. figure:: images/Update_Environment.png   
+
+#. Click on **Account**
+
+   .. figure:: images/Environment_Name.png   
+
+#. Verify the **Ready for Marketplace usage, Linux only**
+
+   .. figure:: images/Linux_Verification.png   
+
+
+
 
 
