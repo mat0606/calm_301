@@ -34,6 +34,14 @@
 
 .. toctree::
   :maxdepth: 2
+  :caption: 101: Linux Workload Scale Out/Scale In
+  :name: _calm_day2
+  :hidden:
+
+  calm_linux_track/calm_day2_linux/calm_day2_linux
+
+.. toctree::
+  :maxdepth: 2
   :caption: 201: Escript & Task Library
   :name: _calm_escript
   :hidden:
@@ -47,14 +55,6 @@
   :hidden:
 
   calm_aws/calm_aws
-
-.. toctree::
-  :maxdepth: 2
-  :caption: 201: Linux Workload Scale Out/Scale In
-  :name: _calm_day2
-  :hidden:
-
-  calm_linux_track/calm_day2_linux/calm_day2_linux
 
 .. toctree::
   :maxdepth: 2
