@@ -26,11 +26,11 @@ Specify **Windows-<INITIALS>** in the **Blueprint Name** field.
 Enter a **Windows 2016 added to AD** in the Description field
 Select the project created earlier from the **Project** drop down menu and click **Proceed**.
 
-.. figure:: images/windows0.png
+  .. figure:: images/windows0.png
 
 #. Click **Credentials >** :fa:`plus-circle` and enter **both** of the following credentials:
 
-.. note::
+  .. note::
 
   You'll likely notice that both credentials have the same username and password.  For this reason, we technically could use a single credential.  However, in the real world it is extremely unlikely (and unwise) that both your User VMs and your Domain credentials are the exact same.  For that reason, we'll leave them seperate to make this Blueprint more portable.
 
@@ -45,7 +45,7 @@ Select the project created earlier from the **Project** drop down menu and click
 - **Secret** - Password
 - **Password** - nutanix/4u
 
-.. figure:: images/windows1.png
+  .. figure:: images/windows1.png
 
 #. Click **Save**, and then **Back**.
 
@@ -64,7 +64,7 @@ Variables improve the extensibility of Blueprints.  For this Blueprint, we'll wa
 | AD                     | <DC-VM-IP> (10.42.xx.40)           |
 +------------------------+------------------------------------+
 
-.. figure:: images/windows2.png
+  .. figure:: images/windows2.png
 
 #. Click **Save**.
 
@@ -78,7 +78,7 @@ Adding Windows Service
 
 Note that **Service1** appears in the **Workspace** and the **Configuration Pane** reflects the configuration of the selected Service.
 
-.. figure:: images/windows21.png
+  .. figure:: images/windows21.png
 
 Fill out the following fields on the right side:
 
@@ -197,7 +197,7 @@ With the Windows service icon selected in the workspace window, scroll to the to
 
 #. On the Blueprint Canvas section, a **Package Install** field will pop up next to the Windows Service tile:
 
-.. figure:: images/windows51.png
+  .. figure:: images/windows51.png
 
 Click on the **+ Task** button, and fill out the following fields on the **Configuration Panel** on the right:
 
@@ -206,7 +206,7 @@ Click on the **+ Task** button, and fill out the following fields on the **Confi
 - **Script Type** - Powershell
 - **Credential** - WIN_VM_CRED
 
-.. figure:: images/windows5.png
+  .. figure:: images/windows5.png
 
 #. Copy and paste the following script into the **Script** field:
 
@@ -275,7 +275,7 @@ Package Uninstall
 
 #. Select the Windows service icon in the workspace window again and scroll to the top of the **Configuration Panel**, click **Package**.
 
-.. figure:: images/windows51.png
+  .. figure:: images/windows51.png
 
 - **Click** - Configure Uninstall
 - **Click** - + Task
@@ -333,7 +333,7 @@ In the **Name of the Application** field, specify a unique name (e.g. Windows-*<
 
 #. Click **Deploy*.
 
-.. figure:: images/launch-blueprint.png
+  .. figure:: images/launch-blueprint.png
 
 You will be taken directly to the **Applications** page to monitor the provisioning of your Blueprint.
 
@@ -341,26 +341,26 @@ Select **Audit > Create** to view the progress of your application. You'll likel
 
 Note the status changes to **Running** after the Blueprint has been successfully provisioned.
 
-.. figure:: images/windows6.png
+  .. figure:: images/windows6.png
 
 Verification
 ............
 
 #. Click on the **Audit** tab. Click on **Windows - Package Install**.  Click on **Windows - JoinDomain**.  Verify the powershell script was executed successfully
 
-.. figure:: images/windows62.png
+  .. figure:: images/windows62.png
 
 #. Click on the **Services** tab, then select the **WindowsAD** service.  Note down the IP address.  
 
-.. figure:: images/windows7.png
+  .. figure:: images/windows7.png
 
 #. Open a Remote Desktop to connect to the provisioned VM.
 
-.. figure:: images/windows8.png
+  .. figure:: images/windows8.png
 
 #. Select the **Control Panel**.  Select **System and Security**.  Select **System**
 
-.. figure:: images/windows9.png
+  .. figure:: images/windows9.png
 
 At this point you're welcome to run the **Delete** action to clean up your application and underlying VM.  Alternatively, you could run the **Soft Delete** action, which deletes the application from Calm's point of view, but **leaves** the underlying VM(s) up and running. This is useful when the VM will be used and managed perpetually by an end user, and isn't needed to be managed by Calm.
 
