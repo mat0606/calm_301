@@ -42,6 +42,15 @@
 
 .. toctree::
   :maxdepth: 2
+  :caption: 101: Windows VM to join AD Domain
+  :name: _calm_ad
+  :hidden:
+
+  calm_windows_ad/calm_windows_ad
+
+  calm_linux_track/calm_day2_linux/calm_day2_linux
+.. toctree::
+  :maxdepth: 2
   :caption: 201: Escript & Task Library
   :name: _calm_escript
   :hidden:
