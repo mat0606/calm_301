@@ -61,7 +61,7 @@ On the right side of the screen, in the **Configuration Pane** under **Variable 
 +------------------------+------------------------------------+
 | DOMAIN_NAME            | ntnx.local                         |
 +------------------------+------------------------------------+
-| AD\_IP                 | <DC-VM-IP> (10.42.xx.40)           |
+| AD                     | <DC-VM-IP> (10.42.xx.40)           |
 +------------------------+------------------------------------+
 
 .. figure:: images/windows2.png
@@ -193,7 +193,7 @@ Click **Save** and ensure no errors or warnings pop-up.  If they do, resolve the
 Package Install
 ...............
 
-With the Windows10 service icon selected in the workspace window, scroll to the top of the **Configuration Panel**, click **Package**.  Name the Package as **WIN_PACKAGE**, and then click the **Configure install** button.
+With the Windows service icon selected in the workspace window, scroll to the top of the **Configuration Panel**, click **Package**.  Name the Package as **WIN_PACKAGE**, and then click the **Configure install** button.
 
 On the Blueprint Canvas section, a **Package Install** field will pop up next to the Windows Service tile:
 
@@ -261,7 +261,7 @@ Copy and paste the following script into the **Script** field:
      Set-Hostname -Hostname $HOSTNAME
    }
    
-   JointoDomain -DomainName "@@{DOMAIN_NAME}@@" -Username "@@{DOMAIN_CRED.username}@@" -Password "@@{DOMAIN_CRED.secret}@@" -Server "@@{AD_IP}@@"
+   JointoDomain -DomainName "@@{DOMAIN_NAME}@@" -Username "@@{DOMAIN_CRED.username}@@" -Password "@@{DOMAIN_CRED.secret}@@" -Server "@@{AD}@@"
    
    Restart-Computer -Force -AsJob
    exit 0
@@ -273,7 +273,7 @@ Copy and paste the following script into the **Script** field:
 Package Uninstall
 .................
 
-Select the Windows10 service icon in the workspace window again and scroll to the top of the **Configuration Panel**, click **Package**.
+Select the Windows service icon in the workspace window again and scroll to the top of the **Configuration Panel**, click **Package**.
 
 .. figure:: images/windows51.png
 
@@ -310,10 +310,10 @@ Copy and paste the following script into the **Script** field:
      Write-Host "$adminname , $password"
      $credential = New-Object System.Management.Automation.PSCredential($adminname,$adminpassword)
      Remove-computer -UnjoinDomaincredential $credential -PassThru -Verbose -Force
-     Write-Host "Removed from domain @@{DOMAIN}@@"
+     Write-Host "Removed from domain @@{DOMAIN_NAME}@@"
    }
    
-   RemoveFromDomain -DomainName "@@{DOMAIN}@@" -Username "@@{DOMAIN_CRED.username}@@" -Password "@@{DOMAIN_CRED.secret}@@"
+   RemoveFromDomain -DomainName "@@{DOMAIN_NAME}@@" -Username "@@{DOMAIN_CRED.username}@@" -Password "@@{DOMAIN_CRED.secret}@@"
 
 
 .. note::
