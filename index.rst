@@ -48,7 +48,6 @@
 
   calm_windows_ad/calm_windows_ad
 
-  calm_linux_track/calm_day2_linux/calm_day2_linux
 .. toctree::
   :maxdepth: 2
   :caption: 201: Escript & Task Library

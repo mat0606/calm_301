@@ -11,7 +11,7 @@ Overview
 
   Estimated time to complete: **45 MINUTES**
 
-  In this exercise you will create a Nutanix Calm Blueprint based on a Microsoft Windows 2019 image.  The image will be sysprepped with an unattended XML answer file, and then will be added to a Domain via a Powershell script.  We'll also add a script to remove the computer from the Domain upon deletion.
+  In this exercise you will create a Nutanix Calm Blueprint based on a Microsoft Windows 2016 image.  The image will be sysprepped with an unattended XML answer file, and then will be added to a Domain via a Powershell script.  We'll also add a script to remove the computer from the Domain upon deletion.
 
 
 Creating Blueprint 
@@ -83,7 +83,7 @@ Note that **Service1** appears in the **Workspace** and the **Configuration Pane
 Fill out the following fields on the right side:
 
 - **Service Name** - Windows
-- **Name** - Windows_AHV
+- **Name** - Windows_AD
 - **Cloud** - Nutanix
 - **OS** - Windows
 - **VM Name** - WC@@{calm_time}@@
@@ -195,7 +195,7 @@ Package Install
 
 With the Windows10 service icon selected in the workspace window, scroll to the top of the **Configuration Panel**, click **Package**.  Name the Package as **WIN_PACKAGE**, and then click the **Configure install** button.
 
-On the Blueprint Canvas section, a **Package Install** field will pop up next to the Windows10 Service tile:
+On the Blueprint Canvas section, a **Package Install** field will pop up next to the Windows Service tile:
 
 .. figure:: images/windows51.png
 
