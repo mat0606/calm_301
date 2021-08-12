@@ -1,7 +1,7 @@
 .. _calm_windows_ad:
 
 -----------------------
-Windows AD
+Calm: Windows AD
 -----------------------
 
 Overview
