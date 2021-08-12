@@ -20,7 +20,7 @@ Creating Blueprint
 Creating Blueprint
 ..................
 
-From **Prism Central > Calm**, select **Blueprints** from the sidebar and click **+ Create Application Blueprint**, choose **Multi VM/Pod Blueprint**.
+#. From **Prism Central > Calm**, select **Blueprints** from the sidebar and click **+ Create Application Blueprint**, choose **Multi VM/Pod Blueprint**.
 
 Specify **Windows-<INITIALS>** in the **Blueprint Name** field.
 Enter a **Windows 2016 added to AD** in the Description field
@@ -28,7 +28,7 @@ Select the project created earlier from the **Project** drop down menu and click
 
 .. figure:: images/windows0.png
 
-Click **Credentials >** :fa:`plus-circle` and enter **both** of the following credentials:
+#. Click **Credentials >** :fa:`plus-circle` and enter **both** of the following credentials:
 
 .. note::
 
@@ -47,14 +47,14 @@ Click **Credentials >** :fa:`plus-circle` and enter **both** of the following cr
 
 .. figure:: images/windows1.png
 
-Click **Save**, and then **Back**.
+#. Click **Save**, and then **Back**.
 
 Setting Variables
 .................
 
 Variables improve the extensibility of Blueprints.  For this Blueprint, we'll want to define the domain name that the Windows VM will join to, and the IP of the Active Directory server.  We'll leave the **Secret** variables **un-checked**.
 
-On the right side of the screen, in the **Configuration Pane** under **Variable List**, fill out the following fields:
+#. On the right side of the screen, in the **Configuration Pane** under **Variable List**, fill out the following fields:
 
 +------------------------+------------------------------------+
 | **Variable Name**      | **Value**                          |
@@ -66,15 +66,15 @@ On the right side of the screen, in the **Configuration Pane** under **Variable 
 
 .. figure:: images/windows2.png
 
-Click **Save**.
+#. Click **Save**.
 
 Adding Windows Service
 ......................
 
-Select **Blueprints** from the sidebar and click your ****Windows-<INITIALS>**** Blueprint to open the Blueprint Editor.
+#. Select **Blueprints** from the sidebar and click your ****Windows-<INITIALS>**** Blueprint to open the Blueprint Editor.
 
 
-In **Application Overview > Services**, click :fa:`plus-circle`.
+#. In **Application Overview > Services**, click :fa:`plus-circle`.
 
 Note that **Service1** appears in the **Workspace** and the **Configuration Pane** reflects the configuration of the selected Service.
 
@@ -188,14 +188,14 @@ Fill out the following fields on the right side:
 
   .. figure:: images/windows4.png
 
-Click **Save** and ensure no errors or warnings pop-up.  If they do, resolve the issue, and **Save** again.
+#. Click **Save** and ensure no errors or warnings pop-up.  If they do, resolve the issue, and **Save** again.
 
 Package Install
 ...............
 
 With the Windows service icon selected in the workspace window, scroll to the top of the **Configuration Panel**, click **Package**.  Name the Package as **WIN_PACKAGE**, and then click the **Configure install** button.
 
-On the Blueprint Canvas section, a **Package Install** field will pop up next to the Windows Service tile:
+#. On the Blueprint Canvas section, a **Package Install** field will pop up next to the Windows Service tile:
 
 .. figure:: images/windows51.png
 
@@ -208,7 +208,7 @@ Click on the **+ Task** button, and fill out the following fields on the **Confi
 
 .. figure:: images/windows5.png
 
-Copy and paste the following script into the **Script** field:
+#. Copy and paste the following script into the **Script** field:
 
 .. code-block:: powershell
 
@@ -273,7 +273,7 @@ Copy and paste the following script into the **Script** field:
 Package Uninstall
 .................
 
-Select the Windows service icon in the workspace window again and scroll to the top of the **Configuration Panel**, click **Package**.
+#. Select the Windows service icon in the workspace window again and scroll to the top of the **Configuration Panel**, click **Package**.
 
 .. figure:: images/windows51.png
 
@@ -284,7 +284,7 @@ Select the Windows service icon in the workspace window again and scroll to the 
 - **Script Type** - Powershell
 - **Credential** - WIN_VM_CRED
 
-Copy and paste the following script into the **Script** field:
+#. Copy and paste the following script into the **Script** field:
 
 .. code-block:: powershell
 
@@ -319,7 +319,7 @@ Copy and paste the following script into the **Script** field:
 .. note::
    This script contains a function which removes the computer from the domain, utilizing the DOMAIN_CRED credentials that we defined earlier.
 
-Click **Save**. You will be prompted with specific errors if there are validation issues such as missing fields or unacceptable characters.
+#. Click **Save**. You will be prompted with specific errors if there are validation issues such as missing fields or unacceptable characters.
 
 Blueprint Launch and Verification
 +++++++++++++++++++++++++++++++++
@@ -327,11 +327,11 @@ Blueprint Launch and Verification
 Launching the Blueprint
 .......................
 
-From the toolbar at the top of the Blueprint Editor, click **Launch**.
+#. From the toolbar at the top of the Blueprint Editor, click **Launch**.
 
 In the **Name of the Application** field, specify a unique name (e.g. Windows-*<INITIALS>*-1).
 
-Click **Deploy*.
+#. Click **Deploy*.
 
 .. figure:: images/launch-blueprint.png
 
@@ -346,19 +346,19 @@ Note the status changes to **Running** after the Blueprint has been successfully
 Verification
 ............
 
-Click on the **Audit** tab. Click on **Windows - Package Install**.  Click on **Windows - JoinDomain**.  Verify the powershell script was executed successfully
+#. Click on the **Audit** tab. Click on **Windows - Package Install**.  Click on **Windows - JoinDomain**.  Verify the powershell script was executed successfully
 
 .. figure:: images/windows62.png
 
-Click on the **Services** tab, then select the **WindowsAD** service.  Note down the IP address.  
+#. Click on the **Services** tab, then select the **WindowsAD** service.  Note down the IP address.  
 
 .. figure:: images/windows7.png
 
-Open a Remote Desktop to connect to the provisioned VM.
+#. Open a Remote Desktop to connect to the provisioned VM.
 
 .. figure:: images/windows8.png
 
-Select the **Control Panel**.  Select **System and Security**.  Select **System**
+#. Select the **Control Panel**.  Select **System and Security**.  Select **System**
 
 .. figure:: images/windows9.png
 
