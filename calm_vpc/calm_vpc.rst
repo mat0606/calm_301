@@ -20,7 +20,7 @@ Overview
 
 Virtual Private Cloud (VPC) allowed the service provider to onboard and isolate the underlying infrastructure and network for each tenant.
 
-.. figure:: images/vpc-overview.png.png
+.. figure:: images/vpc-overview.png
 
 Create a blueprint to create Virtual Private Cloud (VPC)
 ........................................................
@@ -123,7 +123,57 @@ Create a blueprint to create Virtual Private Cloud (VPC)
  
 .. code-block:: python
 
-  
+  user = "@@{PC_Credential.username}@@"
+  password = "@@{PC_Credential.secret}@@"
+  ip = "@@{PC_IP}@@"
+
+
+  payload = {
+    "spec": {
+      "name": "@@{vpc_name}@@",
+      "resources": {
+        "common_domain_name_server_ip_list": [
+        { 
+          "ip": "@@{dns}@@"
+        }
+        ],
+        "external_subnet_list": [
+        {
+          "external_subnet_reference": {
+            "kind": "subnet",
+            "uuid": "@@{pe_network_UUID}@@"
+          }
+        }
+        ],
+        "externally_routable_prefix_list": [
+        {
+          "ip": "@@{ext_routable_ip}@@",
+          "prefix_length": @@{ext_routable_ip_prefix}@@
+        }
+        ]
+      }
+    },
+  #  "description": "on prem VPC",
+    "api_version": "3.0",
+    "metadata": {
+      "kind": "vpc",
+      "categories": {
+        "VirtualNetworkType": "Tenant"
+      }
+    }
+  }
+
+  url = "https://" + ip + ":9440/api/nutanix/v3/vpcs"
+  headers = {'Accept': 'application/json', 'Content-Type': 'application/json'}
+  url_method = "POST"
+  r = urlreq(url, url_method, auth="BASIC", user=user, passwd=password, params=json.dumps(payload), verify=False, headers=headers)
+  print "Status code: {}".format(r.status_code)
+  print "Output: {}".format(r.text)
+  if r.ok:
+    print "VPC {0} is created successfully".format("@@{vpc_name}@@")
+  else:
+    exit(1)
+    
 #.  On the left side of the screen, click on **Package: Install**  
 
   .. figure:: images/package-install.png
@@ -147,8 +197,8 @@ Create a blueprint to create Virtual Private Cloud (VPC)
 
 .. code-block:: python
   
-  user = "@@{PC_Credential.username}@@"
-  password = "@@{PC_Credential.secret}@@"
+  user = "@@{PC Credential.username}@@"
+  password = "@@{PC Credential.secret}@@"
   ip = "@@{PC_IP}@@"
 
   payload = {}
@@ -177,8 +227,8 @@ Create a blueprint to create Virtual Private Cloud (VPC)
   
 .. code-block:: python
 
-  user = "@@{PC_Credential.username}@@"
-  password = "@@{PC_Credential.secret}@@"
+  user = "@@{PC Credential.username}@@"
+  password = "@@{PC Credential.secret}@@"
   ip = "@@{PC_IP}@@"
 
   payload = {
@@ -187,7 +237,7 @@ Create a blueprint to create Virtual Private Cloud (VPC)
 
   url = "https://" + ip + ":9440/api/nutanix/v3/vpcs/@@{vpc_uuid}@@"
   headers = {'Accept': 'application/json', 'Content-Type': 'application/json'}
-  url_method = "POST"
+  url_method = "DELETE"
   r = urlreq(url, url_method, auth="BASIC", user=user, passwd=password, params=json.dumps(payload), verify=False, headers=headers)
   print "Status code: {}".format(r.status_code)
   #print "Output: {}".format(r.text)
@@ -274,8 +324,8 @@ Create a blueprint to create subnet into VPC
 
 .. code-block:: python
   
-  user = "@@{PC_Credential.username}@@"
-  password = "@@{PC_Credential.secret}@@"
+  user = "@@{PC Credential.username}@@"
+  password = "@@{PC Credential.secret}@@"
   ip = "@@{PC_IP}@@"
   payload = {
     "filter": "name==@@{vpc_name}@@"
@@ -321,8 +371,8 @@ Create a blueprint to create subnet into VPC
  
 .. code-block:: python
 
-  user = "@@{PC_Credential.username}@@"
-  password = "@@{PC_Credential.secret}@@"
+  user = "@@{PC Credential.username}@@"
+  password = "@@{PC Credential.secret}@@"
   ip = "@@{PC_IP}@@"
 
 
@@ -386,8 +436,8 @@ Create a blueprint to create subnet into VPC
 
 .. code-block:: python
   
-  user = "@@{PC_Credential.username}@@"
-  password = "@@{PC_Credential.secret}@@"
+  user = "@@{PC Credential.username}@@"
+  password = "@@{PC Credential.secret}@@"
   ip = "@@{PC_IP}@@"
   payload = {
     "filter": "name==@@{subnet_name}@@"
@@ -414,8 +464,8 @@ Create a blueprint to create subnet into VPC
   
 .. code-block:: python
 
-  user = "@@{PC_Credential.username}@@"
-  password = "@@{PC_Credential.secret}@@"
+  user = "@@{PC Credential.username}@@"
+  password = "@@{PC Credential.secret}@@"
   ip = "@@{PC_IP}@@"
 
   payload = {
