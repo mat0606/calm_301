@@ -72,12 +72,20 @@
 
   calm_api/calm_api
 
-  .. toctree::
+.. toctree::
   :maxdepth: 2
   :caption: 301: Infrastructure as Code (IAC) with Calm Domain Specific Language (DSL)
   :name: _calm_dsl
   :hidden:
 
   calm_dsl/calm_dsl
+
+.. toctree::
+  :maxdepth: 2
+  :caption: 301: Nutanix Calm for Virtual Private Cloud (VPC)
+  :name: _calm_api
+  :hidden:
+
+  calm_vpc/calm_vpc
 
 
