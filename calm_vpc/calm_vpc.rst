@@ -29,6 +29,8 @@ Create a blueprint to create Virtual Private Cloud (VPC)
 
   .. figure:: images/create-blueprint.png
 
+#.  Key in the blueprint name.  Eg **vpc_<initial>**
+
 #.  Select the **Credentials** tab.  Create a new credential for **PC Credential** and enter desired User/Pass**
 
   .. figure:: images/pc_cred.png
@@ -294,6 +296,8 @@ Create a blueprint to create subnet into VPC
 
   .. figure:: images/create-blueprint.png
 
+#.  Key in the blueprint name.  Eg **subnet_vpc_<initial>**
+
 #.  Select the **Credentials** tab.  Create a new credential for **PC Credential** and enter desired User/Pass**
 
   .. figure:: images/pc_cred.png
@@ -523,6 +527,8 @@ Create a blueprint to create Tunnel VM into VPC
 #. Click on **Create Blueprint**.  Create a **Multi VM/Pod** blueprint.  
 
   .. figure:: images/create-blueprint.png
+
+#.  Key in the blueprint name.  Eg **tunnel_vm_<initial>**
 
 #.  Select the **Credentials** tab.  Create a new credential for **PC Credential** and enter desired User/Pass**
 
