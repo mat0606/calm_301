@@ -125,8 +125,8 @@ Create a blueprint to create Virtual Private Cloud (VPC)
  
 .. code-block:: python
 
-  user = "@@{PC_Credential.username}@@"
-  password = "@@{PC_Credential.secret}@@"
+  user = "@@{PC Credential.username}@@"
+  password = "@@{PC Credential.secret}@@"
   ip = "@@{PC_IP}@@"
 
 
