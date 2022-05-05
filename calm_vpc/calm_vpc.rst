@@ -1,4 +1,4 @@
-*Script Provided Below*.. _calm_vpc:
+.. _calm_vpc:
 
 -----------------------------------------
 Calm: Virtual Private Cloud
