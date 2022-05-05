@@ -277,6 +277,11 @@ Create a blueprint to create Virtual Private Cloud (VPC)
 
 .. figure:: images/add-static-route.png
 
+#. Fill in the following:
+
+ - Destination Prefix: **0.0.0.0/0**
+ - Next Hop: **Secondary**
+
 #. Click on **Save**
 
 .. figure:: images/static-route.png

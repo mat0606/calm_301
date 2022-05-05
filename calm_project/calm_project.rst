@@ -43,7 +43,7 @@ Add Account in Project
 
    .. figure:: images/confirm-vpc.png
 
-#. Click on **Confirm**
+#. Click on **Save Accounts & Project**
 
    .. figure:: images/Save-Account2.png
 
