@@ -150,7 +150,7 @@ Create a blueprint to create Virtual Private Cloud (VPC)
         "externally_routable_prefix_list": [
         {
           "ip": "@@{ext_routable_ip}@@",
-          "prefix_length": @@{ext_routable_ip_prefix}@@
+          "prefix_length": "@@{ext_routable_ip_prefix}@@"
         }
         ]
       }
