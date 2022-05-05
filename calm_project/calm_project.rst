@@ -45,7 +45,7 @@ Add Account in Project
 
 #. Click on **Confirm**
 
-   .. figure:: images/save-account2.png
+   .. figure:: images/Save-Account2.png
 
 #. Click on **Save & Configure Environment**
 

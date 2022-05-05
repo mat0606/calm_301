@@ -268,11 +268,16 @@ Create a blueprint to create Virtual Private Cloud (VPC)
 
 .. figure:: images/vpc-detail.png
 
-#. Add in a static route to allow the Calm Policy VM to communicate with the Calm Tunnel VM.  Click on **Routes**.  
+
+#. Add in a static route to allow the Calm Policy VM to communicate with the Calm Tunnel VM.  Click on **Routes**.  Click on **Manage Static Routes**
+
+.. figure:: images/route.png
+
+#.  Click on **Add Static Route** 
 
 .. figure:: images/add-static-route.png
 
-#. Click on **Manage Static Route**
+#. Click on **Save**
 
 .. figure:: images/static-route.png
 
