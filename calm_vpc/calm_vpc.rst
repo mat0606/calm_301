@@ -334,6 +334,18 @@ Create a blueprint to create subnet into VPC
     vpc_list.append("{}".format(vpc['spec']['name']))
   print ','.join(vpc_list)
 
+#.  On the left hand side of the screen, create a service.
+
+  .. figure:: images/vpc_add_service.png
+
+#.  On the right hand side of the screen, select **Existing Machine** for account name
+
+  .. figure:: images/vpc_service_name.png
+
+#. On the right hand side of the screen,
+
+  .. figure:: images/vpc-service-detail.png
+
 #.  On the left hand side of the screen, create a service action: **Create Subnet in VPC**
 
   .. figure:: images/Create-Service-Action.png
@@ -606,6 +618,17 @@ Create a blueprint to create Tunnel VM into VPC
     
   print ','.join(subnet_list)
 
+#.  On the left hand side of the screen, create a service.
+
+  .. figure:: images/vpc_add_service.png
+
+#.  On the right hand side of the screen, select **Existing Machine** for account name
+
+  .. figure:: images/vpc_service_name.png
+
+#. On the right hand side of the screen,
+
+  .. figure:: images/vpc-service-detail.png
 
 #.  On the left hand side of the screen, create a service action: **Create Tunnel VM**
 
