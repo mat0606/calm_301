@@ -26,7 +26,7 @@ Projects are the logical construct that integrate Calm with Nutanix’s native S
 Add Account in Project
 ......................
 
-#. Click on **Select Account**.  Select **NTNX_LOCAL_AZ**
+#. Click on **Select Account**.  Select **NTNX_LOCAL_AZ_60_10**
 
    .. figure:: images/Add_Account.png
 
