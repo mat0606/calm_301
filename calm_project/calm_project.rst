@@ -3,7 +3,7 @@
 Pre-Requisites:
 +++++++++++++++
 
-This lab is created using Nutanix Calm 3.2.6 and Prism Central pc.2021.5
+This lab is created using Nutanix Calm 3.5.0 and Prism Central pc.2022.1.02
 
 Create a Project in Calm
 ++++++++++++++++++++++++
@@ -30,17 +30,22 @@ Add Account in Project
 
    .. figure:: images/Add_Account.png
 
-#. Click on **Add/edit Clusters and Subnets**.  
+#. Click on **Configure Resources**.  Click on **Select VPCs & Subnets**
 
-   .. figure:: images/Add_Cluster.png
+   .. figure:: images/add-cluster2.png
 
-#. Select **cluster**.  Select the **Primary** Network.  Click on **Confirm**.
+#. Select **VPC**.  Select the Overlay Subnet **SG-AMK** Network.  Click on **Confirm**.
 
-   .. figure:: images/Select_Cluster.png
+   .. figure:: images/select-vpc.png
 
-#. Click on **Save Accounts and Project**
 
-   .. figure:: images/Save-Account.png
+#. Select **Confirm**.  
+
+   .. figure:: images/confirm-vpc.png
+
+#. Click on **Confirm**
+
+   .. figure:: images/save-account2.png
 
 #. Click on **Save & Configure Environment**
 

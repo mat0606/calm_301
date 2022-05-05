@@ -1,7 +1,7 @@
 *Script Provided Below*.. _calm_dsl:
 
 -----------------------------------------
-Calm: Virtual Private Cloud
+Calm: Onboard Tenant
 -----------------------------------------
 
 Pre-requsities:
@@ -18,12 +18,12 @@ Pre-requsities:
 Overview
 ++++++++
 
-Virtual Private Cloud (VPC) allowed the service provider to onboard and isolate the underlying infrastructure and network for each tenant.
+The service provider would like to onboard each tenant.
 
 .. figure:: images/vpc-overview.png
 
-Create a blueprint to create Virtual Private Cloud (VPC)
-........................................................
+Create a blueprint to onboard tenant
+....................................
 
 #. Click on **Create Blueprint**.  Create a **Multi VM/Pod** blueprint.  
 
@@ -267,15 +267,6 @@ Create a blueprint to create Virtual Private Cloud (VPC)
 #. Drill into the VPC to look at its details
 
 .. figure:: images/vpc-detail.png
-
-#. Add in a static route to allow the Calm Policy VM to communicate with the Calm Tunnel VM.  Click on **Routes**.  
-
-.. figure:: images/add-static-route.png
-
-#. Click on **Manage Static Route**
-
-.. figure:: images/static-route.png
-
 
 Create a blueprint to create subnet into VPC
 ............................................
@@ -877,10 +868,6 @@ Create a blueprint to create Tunnel VM into VPC
 #. In Calm **Accounts**, let's look at the tunnel VM during provisioning
 
 .. figure:: images/tunnel-vm-created.png
-
-#. Wait for a few minutes.  The tunnel VM will change the state to **Connected**
-
-.. figure:: images/tunnel-vm-connected.png
 
 #. In Prism Central, **Compute & Storage**.  Click on **VMs**
 
