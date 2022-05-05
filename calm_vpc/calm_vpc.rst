@@ -65,6 +65,18 @@ Create a blueprint to create Virtual Private Cloud (VPC)
       subnet_list.append("{}".format(subnet['spec']['name']))
       print ','.join(subnet_list)
 
+#.  On the left hand side of the screen, create a service.
+
+  .. figure:: images/vpc_add_service.png
+
+#.  On the right hand side of the screen, select **Existing Machine** for account name
+
+  .. figure:: images/vpc_service_name.png
+
+#. On the right hand side of the screen,
+
+  .. figure:: images/vpc-service-detail.png
+  
 #.  On the left hand side of the screen, create a service action: **Create VPC**
 
   .. figure:: images/Create-Service-Action.png
