@@ -44,7 +44,11 @@ Create a blueprint to create Virtual Private Cloud (VPC)
 
   .. figure:: images/variables.png
 
-#. Create the following dynamic variable: **external_subnet** on the right side of the screen.  **Replace the password with the Prism Central password.**
+#. Create the following dynamic variable: **external_subnet** on the right side of the screen.  Select Input Type: **escript**
+
+  .. figure:: images/dynamic-escript.png
+
+#.  **Replace the password with the Prism Central password.**
 
 .. code-block:: python
        
@@ -325,7 +329,11 @@ Create a blueprint to create subnet into VPC
 
   .. figure:: images/subnet-variables.png
 
-#. Create the following dynamic variable: **vpc_name** on the right side of the screen.  **Replace the password with the Prism Central password.**
+#. Create the following dynamic variable: **vpc_name** on the right side of the screen.  Select Input Type: **escript**
+
+  .. figure:: images/dynamic-vpc-escript.png
+
+#.  **Replace the password with the Prism Central password.**
 
 .. code-block:: python
        
@@ -567,7 +575,11 @@ Create a blueprint to create Tunnel VM into VPC
 
   .. figure:: images/tunnel-vm-variables.png
 
-#. Create the following dynamic variable: **vpc_name** on the right side of the screen.  **Replace the password with the Prism Central password.**
+#. Create the following dynamic variable: **vpc_name** on the right side of the screen.  Select Input Type: **escript**
+
+  .. figure:: images/dynamic-vpc-escript.png
+
+#.  **Replace the password with the Prism Central password.**
 
 .. code-block:: python
        
@@ -588,7 +600,11 @@ Create a blueprint to create Tunnel VM into VPC
     vpc_list.append("{}".format(vpc['spec']['name']))
   print ','.join(vpc_list)
 
-#.  Create the following dynamic variable: **subnet_name** on the right side of the screen.  **Replace the password with the Prism Central password.**
+#.  Create the following dynamic variable: **subnet_name** on the right side of the screen.  Select Input Type: **escript**
+
+  .. figure:: images/dynamic-tunnel-escript.png
+
+#.  **Replace the password with the Prism Central password.**
 
 .. code-block:: python
        
