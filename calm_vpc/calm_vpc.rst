@@ -268,11 +268,9 @@ Create a blueprint to create Virtual Private Cloud (VPC)
 
   .. figure:: images/Delete-VPC.png
 
-#.  Enter the name of Application "VPC-\<INITIALS\> and fill out the form with the requested information
+#.  Enter the name of Application "VPC-\<INITIALS\> and fill out the form with the requested information.  Press **Deploy**
 
   .. figure:: images/LaunchVPC.png
-
-#. Press **Deploy**
 
 #. Once the application is "running".  Let's look at the audit log.
 
@@ -535,11 +533,9 @@ Create a blueprint to create subnet into VPC
 
 #.  Associate the **Delete Subnet in VPC** action with the **Package uninstall** action.  Click on **+ Action**.  Choose the **Delete Subnet in VPC** action.
 
- #.  Enter the name of Application "SubnetVPC-\<INITIALS\> and fill out the form with the requested information
+ #.  Enter the name of Application "SubnetVPC-\<INITIALS\> and fill out the form with the requested information.  Press **Deploy**
 
   .. figure:: images/Subnet-Launch.png
-
-#. Press **Deploy**
 
 #. Once the application is "running".  Let's look at the audit log.
 
@@ -931,11 +927,9 @@ Create a blueprint to create Tunnel VM into VPC
 
 #.  Associate the **Delete Tunnel VM** action with the **Package uninstall** action.  Click on **+ Action**.  Choose the **Delete Tunnel VM** action.
 
- #.  Enter the name of Application "TunnelVM-\<INITIALS\> and fill out the form with the requested information
+ #.  Enter the name of Application "TunnelVM-\<INITIALS\> and fill out the form with the requested information.  Press **Deploy**
 
   .. figure:: images/tunnel-vm-launch.png
-
-#. Press **Deploy**
 
 #. Once the application is "running".  Let's look at the audit log.
 
