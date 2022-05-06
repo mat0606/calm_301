@@ -37,10 +37,10 @@ Create a blueprint to create Virtual Private Cloud (VPC)
 
 #.  Create the following variables on the right side of the screen.
 
-  - vpc_name  Default value: empty.  **Mark this variable mandatory**
-  - external_routable_ip  Default value: empty.  **Mark this variable mandatory**
-  - dns Default value: **8.8.8.8**.  **Mark this variable mandatory**
-  - PC_IP Default value: **Follow the cluster PC given by the instructor.  Eg 10.x.x.x**
+  - Variable Name: **vpc_name**  Default value: empty.  **Mark this variable mandatory**
+  - Variable Name: **external_routable_ip**  Default value: empty.  **Mark this variable mandatory**
+  - Variable Name: **dns** Default value: **8.8.8.8**.  **Mark this variable mandatory**
+  - Variable Name: **PC_IP** Default value: **Follow the cluster PC given by the instructor.  Eg 10.x.x.x**
 
   .. figure:: images/variables.png
 
@@ -316,12 +316,12 @@ Create a blueprint to create subnet into VPC
 
 #.  Create the following variables on the right side of the screen.
 
-  - subnet_name  Default value: empty.  **Mark this variable mandatory**
-  - Gateway_IP Default value: **192.168.1.1**.  **Mark this variable mandatory**
-  - Network_IP_Prefix Default value: **192.168.1.0/24**.  **Mark this variable mandatory**
-  - Start_IP Default value: **192.168.1.10**. **Mark this variable mandatory**
-  - End_IP Default value: **192.168.1.30**. **Mark this variable mandatory**
-  - PC_IP Default value: **Follow the cluster PC given by the instructor.  Eg 10.x.x.x**
+  - Variable Name: **subnet_name**  Default value: empty.  **Mark this variable mandatory**
+  - Variable Name: **Gateway_IP** Default value: **192.168.1.1**.  **Mark this variable mandatory**
+  - Variable Name: **Network_IP_Prefix** Default value: **192.168.1.0/24**.  **Mark this variable mandatory**
+  - Variable Name: **Start_IP** Default value: **192.168.1.10**. **Mark this variable mandatory**
+  - Variable Name: **End_IP** Default value: **192.168.1.30**. **Mark this variable mandatory**
+  - Variable Name: **PC_IP** Default value: **Follow the cluster PC given by the instructor.  Eg 10.x.x.x**
 
   .. figure:: images/subnet-variables.png
 
@@ -562,8 +562,8 @@ Create a blueprint to create Tunnel VM into VPC
 
 #.  Create the following variables on the right side of the screen.
 
-  - PC_IP Default value: **Follow the cluster PC given by the instructor.  Eg 10.x.x.x**
-  - PE_IP Default value: **Follow the cluster PE given by the instructor.  Eg 10.x.x.x**
+  - Variable Name: **PC_IP** Default value: **Follow the cluster PC given by the instructor.  Eg 10.x.x.x**
+  - Variable Name: **PE_IP** Default value: **Follow the cluster PE given by the instructor.  Eg 10.x.x.x**
 
   .. figure:: images/tunnel-vm-variables.png
 
