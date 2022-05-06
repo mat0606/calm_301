@@ -38,7 +38,7 @@ Create a blueprint to create Virtual Private Cloud (VPC)
 #.  Create the following variables on the right side of the screen.
 
   - vpc_name  Default value: empty.  **Mark this variable mandatory**
-  - external_routable_ip  Default value: **Follow the cluster.  Eg 10.x.x.128/25**.  **Mark this variable mandatory**
+  - external_routable_ip  Default value: empty.  **Mark this variable mandatory**
   - dns Default value: **8.8.8.8**.  **Mark this variable mandatory**
   - PC_IP Default value: **Follow the cluster PC given by the instructor.  Eg 10.x.x.x**
 
