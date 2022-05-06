@@ -38,7 +38,7 @@ Create a blueprint to create Virtual Private Cloud (VPC)
 #.  Create the following variables on the right side of the screen.
 
   - Variable Name: **vpc_name**  Default value: empty.  **Mark this variable mandatory**
-  - Variable Name: **external_routable_ip**  Default value: empty.  **Mark this variable mandatory**
+  - Variable Name: **external_routable_ip**  Default value: empty.  
   - Variable Name: **dns** Default value: **8.8.8.8**.  **Mark this variable mandatory**
   - Variable Name: **PC_IP** Default value: **Follow the cluster PC given by the instructor.  Eg 10.x.x.x**
 
@@ -267,6 +267,10 @@ Create a blueprint to create Virtual Private Cloud (VPC)
 #.  Associate the **Delete VPC** action with the **Package uninstall** action.  Click on **+ Action**.  Choose the **Delete VPC** action.
 
   .. figure:: images/Delete-VPC.png
+
+#.  Click on **Launch**
+
+  .. figure:: images/launch-blueprint.png
 
 #.  Enter the name of Application "VPC-\<INITIALS\> and fill out the form with the requested information.  Press **Deploy**
 
@@ -533,7 +537,11 @@ Create a blueprint to create subnet into VPC
 
 #.  Associate the **Delete Subnet in VPC** action with the **Package uninstall** action.  Click on **+ Action**.  Choose the **Delete Subnet in VPC** action.
 
- #.  Enter the name of Application "SubnetVPC-\<INITIALS\> and fill out the form with the requested information.  Press **Deploy**
+#.  Click on **Launch**
+
+  .. figure:: images/launch-blueprint.png
+
+#.  Enter the name of Application "SubnetVPC-\<INITIALS\> and fill out the form with the requested information.  Press **Deploy**
 
   .. figure:: images/Subnet-Launch.png
 
@@ -927,7 +935,12 @@ Create a blueprint to create Tunnel VM into VPC
 
 #.  Associate the **Delete Tunnel VM** action with the **Package uninstall** action.  Click on **+ Action**.  Choose the **Delete Tunnel VM** action.
 
- #.  Enter the name of Application "TunnelVM-\<INITIALS\> and fill out the form with the requested information.  Press **Deploy**
+#.  Click on **Launch**
+
+  .. figure:: images/launch-blueprint.png
+
+
+#.  Enter the name of Application "TunnelVM-\<INITIALS\> and fill out the form with the requested information.  Press **Deploy**
 
   .. figure:: images/tunnel-vm-launch.png
 
